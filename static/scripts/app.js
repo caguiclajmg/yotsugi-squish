@@ -6,7 +6,7 @@ var imageIndex = 0;
 var freeze = false;
 
 function setFrame(index) {
-    for(i = 0; i < imageFrames.length; ++i) {
+    for(var i = 0; i < imageFrames.length; ++i) {
         imageFrames[i].style.display = i === index ? 'block' : 'none';
     }
 }
