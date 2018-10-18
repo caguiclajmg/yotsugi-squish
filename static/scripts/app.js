@@ -38,7 +38,7 @@ function squeez(e) {
     imageIndex = Math.min(f, imageFrames.length - 1);
 }
 
-for(i = 0; i < 10; ++i) {
+for(var i = 0; i < 10; ++i) {
     var image = document.createElement('img');
     image.src = 'static/images/' + i.toString() + '.png';
     image.className = 'image-frame';
