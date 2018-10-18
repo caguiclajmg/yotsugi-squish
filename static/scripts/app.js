@@ -1,9 +1,33 @@
 var divRoot = document.getElementById('div-root');
-var audioMusic = document.getElementById('audio-music');
-var audioReact = document.getElementById('audio-react');
+
+var audioMusic = createAudioElement({
+    'audio/ogg': 'static/sounds/music.ogg',
+    'audio/mpeg': 'static/sounds/music.mp3'
+});
+audioMusic.loop = true;
+audioMusic.volume = 0.8;
+
+var audioReact = createAudioElement({
+    'audio/ogg': 'static/sounds/react.ogg',
+    'audio/mpeg': 'static/sounds/react.mp3'
+});
+
 var imageFrames = [];
 var imageIndex = 0;
 var freeze = false;
+
+function createAudioElement(sources) {
+    var audio = document.createElement('audio');
+
+    Object.keys(sources).forEach(function(key) {
+        var source = document.createElement('source');
+        source.type = key;
+        source.src = sources[key];
+        audio.appendChild(source);
+    });
+
+    return audio;
+}
 
 function setFrame(index) {
     for(var i = 0; i < imageFrames.length; ++i) {
@@ -17,6 +41,8 @@ function updateFrame() {
 }
 
 function squeez(e) {
+    try { if(audioMusic.paused) audioMusic.play(); } catch(err) {}
+
     if(!freeze) return;
 
     var src = e.target || e.srcElement;
