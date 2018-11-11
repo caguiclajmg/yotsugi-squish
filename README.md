@@ -1,11 +1,11 @@
 <div align="center">
-    <h1>yotsugi-squish</h1>
-    <h4>イェーイ〜ピース！ピース！</h4>
+    <h1>renge-headpat</h1>
+    <h4>にゃんパス！</h4>
     <img src="docs/preview.png" width="85%" />
-    <h6>Image: 終物語 / Owarimonogatari</h6>
+    <h6>Image: のんのんびより / Non Non Biyori</h6>
 </div>
 
 ## Usage
-1. ストレッチ
+1. パット
 2. ？？？
-3. イェーイ〜ピース！ピース！
+3. にゃんパス！
