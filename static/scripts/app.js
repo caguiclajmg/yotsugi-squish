@@ -56,15 +56,13 @@ function squeez(e) {
         y = e.changedTouches[0].pageY;
     }
 
-    var widthHalf = divRoot.offsetWidth / 2;
-
-    var f = (x - widthHalf) / widthHalf;
+    var f = y / divRoot.offsetHeight;
     f = Math.abs(f) * (imageFrames.length - 1);
     f = Math.round(f);
     imageIndex = Math.min(f, imageFrames.length - 1);
 }
 
-for(var i = 0; i < 10; ++i) {
+for(var i = 0; i < 11; ++i) {
     var image = document.createElement('img');
     image.src = 'static/images/' + i.toString() + '.png';
     image.className = 'image-frame';
